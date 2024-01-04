@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "truffle": "^5.11.5",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "name": "zombies",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "mocha": "^10.1.0",
+    "truffle-plugin-verify": "^0.6.7"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

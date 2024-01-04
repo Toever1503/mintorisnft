@@ -1,0 +1,2426 @@
+{
+  "contractName": "NFTFactory",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "NewOrisNft",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "isOwner",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "orisNftToOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        }
+      ],
+      "name": "createOrisNft",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "listOrisNftOf",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct NFTFactory.OrisNFT[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "detailNft",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct NFTFactory.OrisNFT",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"NewOrisNft\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"name\":\"createOrisNft\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"detailNft\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"internalType\":\"struct NFTFactory.OrisNFT\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"listOrisNftOf\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"internalType\":\"struct NFTFactory.OrisNFT[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"orisNftToOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"isOwner()\":{\"returns\":{\"_0\":\"true if `msg.sender` is the owner of the contract.\"}},\"owner()\":{\"returns\":{\"_0\":\"the address of the owner.\"}},\"renounceOwnership()\":{\"details\":\"Allows the current owner to relinquish control of the contract.\"},\"transferOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"The address to transfer ownership to.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"renounceOwnership()\":{\"notice\":\"Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/nftfactory.sol\":\"NFTFactory\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/nftfactory.sol\":{\"keccak256\":\"0xa5e494800b1119309787c3c7420b4277802e651eb5866160dcfe648c44984dea\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://5db024a00f68a57e67e3fe46fc72cbf0ee30938bdbe4a3bd0ba95b8e42841a23\",\"dweb:/ipfs/QmV2e5vmb5wMeymKK9EAgc9gq5fYNrZhRJjb5zHV26jEwg\"]},\"project:/contracts/ownable.sol\":{\"keccak256\":\"0xe806c23a6970feb1e2387c0740053c2b9d79b7e75f28225b6da820526b1ba6de\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://67dc192a7fbfa50d849f32bdfe3f5221d62fc6cf44532bfd159f55f75742c752\",\"dweb:/ipfs/QmQN4jyViU7xLQKg1W7ESeutmqZifW7afD9P1YUYUgLi82\"]},\"project:/contracts/safemath.sol\":{\"keccak256\":\"0xefc9db58b483bf8f2db30e25fa0ee49250e62f857e429f76d57efae0d13425ac\",\"license\":\"Unlicense\",\"urls\":[\"bzz-raw://63f1821c27f9e36f86191879e7b6762abdc17df82159d0a0d6479742107f24ff\",\"dweb:/ipfs/QmW6iWMC8U9yqnHgT7kSWQtXKd8Msng5kgyN5URT368nAR\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: Unlicense\r\npragma solidity >=0.8.19;\r\n\r\nimport \"./ownable.sol\";\r\nimport \"./safemath.sol\";\r\n\r\nabstract contract NFTFactory is Ownable {\r\n    using SafeMath for uint256;\r\n    using SafeMath32 for uint32;\r\n    using SafeMath16 for uint16;\r\n\r\n    struct OrisNFT {\r\n        string name;\r\n    }\r\n\r\n    OrisNFT[] private orisNFTs;\r\n\r\n    mapping(uint => address) public orisNftToOwner;\r\n    mapping(address => uint) ownerOrisNftCnt;\r\n\r\n    event NewOrisNft(uint id, string name);\r\n\r\n    modifier onlyOrisNftOfCreator(uint _tokenId) {\r\n        require(orisNftToOwner[_tokenId] == owner());\r\n        _;\r\n    }\r\n\r\n    function createOrisNft(string memory _name) public onlyOwner{\r\n        OrisNFT memory newOrisNft = OrisNFT(_name);\r\n        orisNFTs.push(newOrisNft);\r\n\r\n        uint id = orisNFTs.length - 1;\r\n        orisNftToOwner[id] = msg.sender;\r\n        ownerOrisNftCnt[msg.sender] = ownerOrisNftCnt[msg.sender].add(1);\r\n        emit NewOrisNft(id, _name);\r\n    }\r\n\r\n    function listOrisNftOf(\r\n        address _address\r\n    ) public view returns (OrisNFT[] memory) {\r\n        OrisNFT[] memory nfts = new OrisNFT[](ownerOrisNftCnt[_address]);\r\n        uint j = 0;\r\n        for (uint i = 0; i < ownerOrisNftCnt[_address]; i++) {\r\n            if (orisNftToOwner[i] == msg.sender) nfts[j++] = orisNFTs[i];\r\n        }\r\n        return nfts;\r\n    }\r\n\r\n    function detailNft(uint _tokenId) public view returns(OrisNFT memory){\r\n        OrisNFT memory nft = orisNFTs[_tokenId];\r\n        return nft;\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\Shiki\\Desktop\\Etherum learning\\truffle\\mintorisnft\\contracts\\nftfactory.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/nftfactory.sol",
+    "exportedSymbols": {
+      "NFTFactory": [
+        601
+      ],
+      "Ownable": [
+        722
+      ],
+      "SafeMath": [
+        825
+      ],
+      "SafeMath16": [
+        1019
+      ],
+      "SafeMath32": [
+        922
+      ]
+    },
+    "id": 602,
+    "license": "Unlicense",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 420,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".19"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:25:2"
+      },
+      {
+        "absolutePath": "project:/contracts/ownable.sol",
+        "file": "./ownable.sol",
+        "id": 421,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 602,
+        "sourceUnit": 723,
+        "src": "68:23:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/safemath.sol",
+        "file": "./safemath.sol",
+        "id": 422,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 602,
+        "sourceUnit": 1020,
+        "src": "93:24:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 423,
+              "name": "Ownable",
+              "nameLocations": [
+                "153:7:2"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 722,
+              "src": "153:7:2"
+            },
+            "id": 424,
+            "nodeType": "InheritanceSpecifier",
+            "src": "153:7:2"
+          }
+        ],
+        "canonicalName": "NFTFactory",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 601,
+        "linearizedBaseContracts": [
+          601,
+          722
+        ],
+        "name": "NFTFactory",
+        "nameLocation": "139:10:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "global": false,
+            "id": 427,
+            "libraryName": {
+              "id": 425,
+              "name": "SafeMath",
+              "nameLocations": [
+                "174:8:2"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 825,
+              "src": "174:8:2"
+            },
+            "nodeType": "UsingForDirective",
+            "src": "168:27:2",
+            "typeName": {
+              "id": 426,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "187:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "global": false,
+            "id": 430,
+            "libraryName": {
+              "id": 428,
+              "name": "SafeMath32",
+              "nameLocations": [
+                "207:10:2"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 922,
+              "src": "207:10:2"
+            },
+            "nodeType": "UsingForDirective",
+            "src": "201:28:2",
+            "typeName": {
+              "id": 429,
+              "name": "uint32",
+              "nodeType": "ElementaryTypeName",
+              "src": "222:6:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint32",
+                "typeString": "uint32"
+              }
+            }
+          },
+          {
+            "global": false,
+            "id": 433,
+            "libraryName": {
+              "id": 431,
+              "name": "SafeMath16",
+              "nameLocations": [
+                "241:10:2"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1019,
+              "src": "241:10:2"
+            },
+            "nodeType": "UsingForDirective",
+            "src": "235:28:2",
+            "typeName": {
+              "id": 432,
+              "name": "uint16",
+              "nodeType": "ElementaryTypeName",
+              "src": "256:6:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint16",
+                "typeString": "uint16"
+              }
+            }
+          },
+          {
+            "canonicalName": "NFTFactory.OrisNFT",
+            "id": 436,
+            "members": [
+              {
+                "constant": false,
+                "id": 435,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "304:4:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 436,
+                "src": "297:11:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 434,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "297:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "OrisNFT",
+            "nameLocation": "278:7:2",
+            "nodeType": "StructDefinition",
+            "scope": 601,
+            "src": "271:45:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 440,
+            "mutability": "mutable",
+            "name": "orisNFTs",
+            "nameLocation": "342:8:2",
+            "nodeType": "VariableDeclaration",
+            "scope": 601,
+            "src": "324:26:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_storage_$dyn_storage",
+              "typeString": "struct NFTFactory.OrisNFT[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 438,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 437,
+                  "name": "OrisNFT",
+                  "nameLocations": [
+                    "324:7:2"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 436,
+                  "src": "324:7:2"
+                },
+                "referencedDeclaration": 436,
+                "src": "324:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_OrisNFT_$436_storage_ptr",
+                  "typeString": "struct NFTFactory.OrisNFT"
+                }
+              },
+              "id": 439,
+              "nodeType": "ArrayTypeName",
+              "src": "324:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_storage_$dyn_storage_ptr",
+                "typeString": "struct NFTFactory.OrisNFT[]"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "functionSelector": "9648916b",
+            "id": 444,
+            "mutability": "mutable",
+            "name": "orisNftToOwner",
+            "nameLocation": "391:14:2",
+            "nodeType": "VariableDeclaration",
+            "scope": 601,
+            "src": "359:46:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+              "typeString": "mapping(uint256 => address)"
+            },
+            "typeName": {
+              "id": 443,
+              "keyName": "",
+              "keyNameLocation": "-1:-1:-1",
+              "keyType": {
+                "id": 441,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "367:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "359:24:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                "typeString": "mapping(uint256 => address)"
+              },
+              "valueName": "",
+              "valueNameLocation": "-1:-1:-1",
+              "valueType": {
+                "id": 442,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "375:7:2",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 448,
+            "mutability": "mutable",
+            "name": "ownerOrisNftCnt",
+            "nameLocation": "437:15:2",
+            "nodeType": "VariableDeclaration",
+            "scope": 601,
+            "src": "412:40:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 447,
+              "keyName": "",
+              "keyNameLocation": "-1:-1:-1",
+              "keyType": {
+                "id": 445,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "420:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "412:24:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueName": "",
+              "valueNameLocation": "-1:-1:-1",
+              "valueType": {
+                "id": 446,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "431:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "3308bb749c21adf7a042ec5a9f4e22732c5d56ada8ae501b97ff19ba7f9baf8f",
+            "id": 454,
+            "name": "NewOrisNft",
+            "nameLocation": "467:10:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 453,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 450,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "483:2:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 454,
+                  "src": "478:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 449,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "478:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 452,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "494:4:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 454,
+                  "src": "487:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 451,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "487:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "477:22:2"
+            },
+            "src": "461:39:2"
+          },
+          {
+            "body": {
+              "id": 468,
+              "nodeType": "Block",
+              "src": "553:75:2",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 464,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "baseExpression": {
+                            "id": 459,
+                            "name": "orisNftToOwner",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 444,
+                            "src": "572:14:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                              "typeString": "mapping(uint256 => address)"
+                            }
+                          },
+                          "id": 461,
+                          "indexExpression": {
+                            "id": 460,
+                            "name": "_tokenId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 456,
+                            "src": "587:8:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "572:24:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 462,
+                            "name": "owner",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 639,
+                            "src": "600:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                              "typeString": "function () view returns (address)"
+                            }
+                          },
+                          "id": 463,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "600:7:2",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "572:35:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 458,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "564:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 465,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "564:44:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 466,
+                  "nodeType": "ExpressionStatement",
+                  "src": "564:44:2"
+                },
+                {
+                  "id": 467,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "619:1:2"
+                }
+              ]
+            },
+            "id": 469,
+            "name": "onlyOrisNftOfCreator",
+            "nameLocation": "517:20:2",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 457,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 456,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "543:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 469,
+                  "src": "538:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 455,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "538:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "537:15:2"
+            },
+            "src": "508:120:2",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 521,
+              "nodeType": "Block",
+              "src": "696:293:2",
+              "statements": [
+                {
+                  "assignments": [
+                    478
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 478,
+                      "mutability": "mutable",
+                      "name": "newOrisNft",
+                      "nameLocation": "722:10:2",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 521,
+                      "src": "707:25:2",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_OrisNFT_$436_memory_ptr",
+                        "typeString": "struct NFTFactory.OrisNFT"
+                      },
+                      "typeName": {
+                        "id": 477,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 476,
+                          "name": "OrisNFT",
+                          "nameLocations": [
+                            "707:7:2"
+                          ],
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 436,
+                          "src": "707:7:2"
+                        },
+                        "referencedDeclaration": 436,
+                        "src": "707:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_OrisNFT_$436_storage_ptr",
+                          "typeString": "struct NFTFactory.OrisNFT"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 482,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 480,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 471,
+                        "src": "743:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 479,
+                      "name": "OrisNFT",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 436,
+                      "src": "735:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_OrisNFT_$436_storage_ptr_$",
+                        "typeString": "type(struct NFTFactory.OrisNFT storage pointer)"
+                      }
+                    },
+                    "id": 481,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "735:14:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_OrisNFT_$436_memory_ptr",
+                      "typeString": "struct NFTFactory.OrisNFT memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "707:42:2"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 486,
+                        "name": "newOrisNft",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 478,
+                        "src": "774:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_OrisNFT_$436_memory_ptr",
+                          "typeString": "struct NFTFactory.OrisNFT memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_OrisNFT_$436_memory_ptr",
+                          "typeString": "struct NFTFactory.OrisNFT memory"
+                        }
+                      ],
+                      "expression": {
+                        "id": 483,
+                        "name": "orisNFTs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 440,
+                        "src": "760:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_storage_$dyn_storage",
+                          "typeString": "struct NFTFactory.OrisNFT storage ref[] storage ref"
+                        }
+                      },
+                      "id": 485,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "769:4:2",
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "src": "760:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_OrisNFT_$436_storage_$dyn_storage_ptr_$_t_struct$_OrisNFT_$436_storage_$returns$__$attached_to$_t_array$_t_struct$_OrisNFT_$436_storage_$dyn_storage_ptr_$",
+                        "typeString": "function (struct NFTFactory.OrisNFT storage ref[] storage pointer,struct NFTFactory.OrisNFT storage ref)"
+                      }
+                    },
+                    "id": 487,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "760:25:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 488,
+                  "nodeType": "ExpressionStatement",
+                  "src": "760:25:2"
+                },
+                {
+                  "assignments": [
+                    490
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 490,
+                      "mutability": "mutable",
+                      "name": "id",
+                      "nameLocation": "803:2:2",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 521,
+                      "src": "798:7:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 489,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "798:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 495,
+                  "initialValue": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 494,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "expression": {
+                        "id": 491,
+                        "name": "orisNFTs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 440,
+                        "src": "808:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_storage_$dyn_storage",
+                          "typeString": "struct NFTFactory.OrisNFT storage ref[] storage ref"
+                        }
+                      },
+                      "id": 492,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "817:6:2",
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "src": "808:15:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
+                      "hexValue": "31",
+                      "id": 493,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "826:1:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "808:19:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "798:29:2"
+                },
+                {
+                  "expression": {
+                    "id": 501,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 496,
+                        "name": "orisNftToOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 444,
+                        "src": "838:14:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                          "typeString": "mapping(uint256 => address)"
+                        }
+                      },
+                      "id": 498,
+                      "indexExpression": {
+                        "id": 497,
+                        "name": "id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 490,
+                        "src": "853:2:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "838:18:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 499,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+                        "src": "859:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 500,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "863:6:2",
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "src": "859:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "838:31:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 502,
+                  "nodeType": "ExpressionStatement",
+                  "src": "838:31:2"
+                },
+                {
+                  "expression": {
+                    "id": 514,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 503,
+                        "name": "ownerOrisNftCnt",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 448,
+                        "src": "880:15:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 506,
+                      "indexExpression": {
+                        "expression": {
+                          "id": 504,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967281,
+                          "src": "896:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 505,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "900:6:2",
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "896:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "880:27:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "hexValue": "31",
+                          "id": 512,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "942:1:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          }
+                        ],
+                        "expression": {
+                          "baseExpression": {
+                            "id": 507,
+                            "name": "ownerOrisNftCnt",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 448,
+                            "src": "910:15:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                              "typeString": "mapping(address => uint256)"
+                            }
+                          },
+                          "id": 510,
+                          "indexExpression": {
+                            "expression": {
+                              "id": 508,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "926:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 509,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "930:6:2",
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "926:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "910:27:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 511,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "938:3:2",
+                        "memberName": "add",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 824,
+                        "src": "910:31:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256,uint256) pure returns (uint256)"
+                        }
+                      },
+                      "id": 513,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "910:34:2",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "880:64:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 515,
+                  "nodeType": "ExpressionStatement",
+                  "src": "880:64:2"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 517,
+                        "name": "id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 490,
+                        "src": "971:2:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 518,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 471,
+                        "src": "975:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 516,
+                      "name": "NewOrisNft",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 454,
+                      "src": "960:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (uint256,string memory)"
+                      }
+                    },
+                    "id": 519,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "960:21:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 520,
+                  "nodeType": "EmitStatement",
+                  "src": "955:26:2"
+                }
+              ]
+            },
+            "functionSelector": "267a9e82",
+            "id": 522,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 474,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 473,
+                  "name": "onlyOwner",
+                  "nameLocations": [
+                    "687:9:2"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 649,
+                  "src": "687:9:2"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "687:9:2"
+              }
+            ],
+            "name": "createOrisNft",
+            "nameLocation": "645:13:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 472,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 471,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nameLocation": "673:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 522,
+                  "src": "659:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 470,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "659:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "658:21:2"
+            },
+            "returnParameters": {
+              "id": 475,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "696:0:2"
+            },
+            "scope": 601,
+            "src": "636:353:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 581,
+              "nodeType": "Block",
+              "src": "1093:276:2",
+              "statements": [
+                {
+                  "assignments": [
+                    535
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 535,
+                      "mutability": "mutable",
+                      "name": "nfts",
+                      "nameLocation": "1121:4:2",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 581,
+                      "src": "1104:21:2",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_memory_ptr_$dyn_memory_ptr",
+                        "typeString": "struct NFTFactory.OrisNFT[]"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 533,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 532,
+                            "name": "OrisNFT",
+                            "nameLocations": [
+                              "1104:7:2"
+                            ],
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 436,
+                            "src": "1104:7:2"
+                          },
+                          "referencedDeclaration": 436,
+                          "src": "1104:7:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_OrisNFT_$436_storage_ptr",
+                            "typeString": "struct NFTFactory.OrisNFT"
+                          }
+                        },
+                        "id": 534,
+                        "nodeType": "ArrayTypeName",
+                        "src": "1104:9:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_storage_$dyn_storage_ptr",
+                          "typeString": "struct NFTFactory.OrisNFT[]"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 544,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "baseExpression": {
+                          "id": 540,
+                          "name": "ownerOrisNftCnt",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 448,
+                          "src": "1142:15:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                            "typeString": "mapping(address => uint256)"
+                          }
+                        },
+                        "id": 542,
+                        "indexExpression": {
+                          "id": 541,
+                          "name": "_address",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 524,
+                          "src": "1158:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1142:25:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 539,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "1128:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_struct$_OrisNFT_$436_memory_ptr_$dyn_memory_ptr_$",
+                        "typeString": "function (uint256) pure returns (struct NFTFactory.OrisNFT memory[] memory)"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 537,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 536,
+                            "name": "OrisNFT",
+                            "nameLocations": [
+                              "1132:7:2"
+                            ],
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 436,
+                            "src": "1132:7:2"
+                          },
+                          "referencedDeclaration": 436,
+                          "src": "1132:7:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_OrisNFT_$436_storage_ptr",
+                            "typeString": "struct NFTFactory.OrisNFT"
+                          }
+                        },
+                        "id": 538,
+                        "nodeType": "ArrayTypeName",
+                        "src": "1132:9:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_storage_$dyn_storage_ptr",
+                          "typeString": "struct NFTFactory.OrisNFT[]"
+                        }
+                      }
+                    },
+                    "id": 543,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1128:40:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_memory_ptr_$dyn_memory_ptr",
+                      "typeString": "struct NFTFactory.OrisNFT memory[] memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1104:64:2"
+                },
+                {
+                  "assignments": [
+                    546
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 546,
+                      "mutability": "mutable",
+                      "name": "j",
+                      "nameLocation": "1184:1:2",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 581,
+                      "src": "1179:6:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 545,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1179:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 548,
+                  "initialValue": {
+                    "hexValue": "30",
+                    "id": 547,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1188:1:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_0_by_1",
+                      "typeString": "int_const 0"
+                    },
+                    "value": "0"
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1179:10:2"
+                },
+                {
+                  "body": {
+                    "id": 577,
+                    "nodeType": "Block",
+                    "src": "1253:87:2",
+                    "statements": [
+                      {
+                        "condition": {
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 566,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "baseExpression": {
+                              "id": 561,
+                              "name": "orisNftToOwner",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 444,
+                              "src": "1272:14:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                                "typeString": "mapping(uint256 => address)"
+                              }
+                            },
+                            "id": 563,
+                            "indexExpression": {
+                              "id": 562,
+                              "name": "i",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 550,
+                              "src": "1287:1:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "1272:17:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "expression": {
+                              "id": 564,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "1293:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 565,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "1297:6:2",
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "1293:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "1272:31:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "id": 576,
+                        "nodeType": "IfStatement",
+                        "src": "1268:60:2",
+                        "trueBody": {
+                          "expression": {
+                            "id": 574,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftHandSide": {
+                              "baseExpression": {
+                                "id": 567,
+                                "name": "nfts",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 535,
+                                "src": "1305:4:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_memory_ptr_$dyn_memory_ptr",
+                                  "typeString": "struct NFTFactory.OrisNFT memory[] memory"
+                                }
+                              },
+                              "id": 570,
+                              "indexExpression": {
+                                "id": 569,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "UnaryOperation",
+                                "operator": "++",
+                                "prefix": false,
+                                "src": "1310:3:2",
+                                "subExpression": {
+                                  "id": 568,
+                                  "name": "j",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 546,
+                                  "src": "1310:1:2",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "nodeType": "IndexAccess",
+                              "src": "1305:9:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_OrisNFT_$436_memory_ptr",
+                                "typeString": "struct NFTFactory.OrisNFT memory"
+                              }
+                            },
+                            "nodeType": "Assignment",
+                            "operator": "=",
+                            "rightHandSide": {
+                              "baseExpression": {
+                                "id": 571,
+                                "name": "orisNFTs",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 440,
+                                "src": "1317:8:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_storage_$dyn_storage",
+                                  "typeString": "struct NFTFactory.OrisNFT storage ref[] storage ref"
+                                }
+                              },
+                              "id": 573,
+                              "indexExpression": {
+                                "id": 572,
+                                "name": "i",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 550,
+                                "src": "1326:1:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "1317:11:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_OrisNFT_$436_storage",
+                                "typeString": "struct NFTFactory.OrisNFT storage ref"
+                              }
+                            },
+                            "src": "1305:23:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_OrisNFT_$436_memory_ptr",
+                              "typeString": "struct NFTFactory.OrisNFT memory"
+                            }
+                          },
+                          "id": 575,
+                          "nodeType": "ExpressionStatement",
+                          "src": "1305:23:2"
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 557,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 553,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 550,
+                      "src": "1217:1:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "baseExpression": {
+                        "id": 554,
+                        "name": "ownerOrisNftCnt",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 448,
+                        "src": "1221:15:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 556,
+                      "indexExpression": {
+                        "id": 555,
+                        "name": "_address",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 524,
+                        "src": "1237:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1221:25:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1217:29:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 578,
+                  "initializationExpression": {
+                    "assignments": [
+                      550
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 550,
+                        "mutability": "mutable",
+                        "name": "i",
+                        "nameLocation": "1210:1:2",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 578,
+                        "src": "1205:6:2",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 549,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1205:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 552,
+                    "initialValue": {
+                      "hexValue": "30",
+                      "id": 551,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1214:1:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "1205:10:2"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "id": 559,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "1248:3:2",
+                      "subExpression": {
+                        "id": 558,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 550,
+                        "src": "1248:1:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 560,
+                    "nodeType": "ExpressionStatement",
+                    "src": "1248:3:2"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "1200:140:2"
+                },
+                {
+                  "expression": {
+                    "id": 579,
+                    "name": "nfts",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 535,
+                    "src": "1357:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_memory_ptr_$dyn_memory_ptr",
+                      "typeString": "struct NFTFactory.OrisNFT memory[] memory"
+                    }
+                  },
+                  "functionReturnParameters": 530,
+                  "id": 580,
+                  "nodeType": "Return",
+                  "src": "1350:11:2"
+                }
+              ]
+            },
+            "functionSelector": "7fa15031",
+            "id": 582,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "listOrisNftOf",
+            "nameLocation": "1006:13:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 525,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 524,
+                  "mutability": "mutable",
+                  "name": "_address",
+                  "nameLocation": "1038:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 582,
+                  "src": "1030:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 523,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1030:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1019:34:2"
+            },
+            "returnParameters": {
+              "id": 530,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 529,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 582,
+                  "src": "1075:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct NFTFactory.OrisNFT[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 527,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 526,
+                        "name": "OrisNFT",
+                        "nameLocations": [
+                          "1075:7:2"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 436,
+                        "src": "1075:7:2"
+                      },
+                      "referencedDeclaration": 436,
+                      "src": "1075:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_OrisNFT_$436_storage_ptr",
+                        "typeString": "struct NFTFactory.OrisNFT"
+                      }
+                    },
+                    "id": 528,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1075:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_storage_$dyn_storage_ptr",
+                      "typeString": "struct NFTFactory.OrisNFT[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1074:18:2"
+            },
+            "scope": 601,
+            "src": "997:372:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 599,
+              "nodeType": "Block",
+              "src": "1446:79:2",
+              "statements": [
+                {
+                  "assignments": [
+                    592
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 592,
+                      "mutability": "mutable",
+                      "name": "nft",
+                      "nameLocation": "1472:3:2",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 599,
+                      "src": "1457:18:2",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_OrisNFT_$436_memory_ptr",
+                        "typeString": "struct NFTFactory.OrisNFT"
+                      },
+                      "typeName": {
+                        "id": 591,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 590,
+                          "name": "OrisNFT",
+                          "nameLocations": [
+                            "1457:7:2"
+                          ],
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 436,
+                          "src": "1457:7:2"
+                        },
+                        "referencedDeclaration": 436,
+                        "src": "1457:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_OrisNFT_$436_storage_ptr",
+                          "typeString": "struct NFTFactory.OrisNFT"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 596,
+                  "initialValue": {
+                    "baseExpression": {
+                      "id": 593,
+                      "name": "orisNFTs",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 440,
+                      "src": "1478:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_OrisNFT_$436_storage_$dyn_storage",
+                        "typeString": "struct NFTFactory.OrisNFT storage ref[] storage ref"
+                      }
+                    },
+                    "id": 595,
+                    "indexExpression": {
+                      "id": 594,
+                      "name": "_tokenId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 584,
+                      "src": "1487:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1478:18:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_OrisNFT_$436_storage",
+                      "typeString": "struct NFTFactory.OrisNFT storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1457:39:2"
+                },
+                {
+                  "expression": {
+                    "id": 597,
+                    "name": "nft",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 592,
+                    "src": "1514:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_OrisNFT_$436_memory_ptr",
+                      "typeString": "struct NFTFactory.OrisNFT memory"
+                    }
+                  },
+                  "functionReturnParameters": 589,
+                  "id": 598,
+                  "nodeType": "Return",
+                  "src": "1507:10:2"
+                }
+              ]
+            },
+            "functionSelector": "fb4b90e1",
+            "id": 600,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "detailNft",
+            "nameLocation": "1386:9:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 585,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 584,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "1401:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 600,
+                  "src": "1396:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 583,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1396:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1395:15:2"
+            },
+            "returnParameters": {
+              "id": 589,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 588,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 600,
+                  "src": "1431:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_OrisNFT_$436_memory_ptr",
+                    "typeString": "struct NFTFactory.OrisNFT"
+                  },
+                  "typeName": {
+                    "id": 587,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 586,
+                      "name": "OrisNFT",
+                      "nameLocations": [
+                        "1431:7:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 436,
+                      "src": "1431:7:2"
+                    },
+                    "referencedDeclaration": 436,
+                    "src": "1431:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_OrisNFT_$436_storage_ptr",
+                      "typeString": "struct NFTFactory.OrisNFT"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1430:16:2"
+            },
+            "scope": 601,
+            "src": "1377:148:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 602,
+        "src": "121:1407:2",
+        "usedErrors": [],
+        "usedEvents": [
+          454,
+          612
+        ]
+      }
+    ],
+    "src": "39:1491:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.21+commit.d9974bed.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-01-04T09:22:01.624Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "isOwner()": {
+        "returns": {
+          "_0": "true if `msg.sender` is the owner of the contract."
+        }
+      },
+      "owner()": {
+        "returns": {
+          "_0": "the address of the owner."
+        }
+      },
+      "renounceOwnership()": {
+        "details": "Allows the current owner to relinquish control of the contract."
+      },
+      "transferOwnership(address)": {
+        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
+        "params": {
+          "newOwner": "The address to transfer ownership to."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "renounceOwnership()": {
+        "notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
+      }
+    },
+    "version": 1
+  }
+}
