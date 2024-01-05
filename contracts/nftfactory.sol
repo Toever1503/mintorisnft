@@ -21,7 +21,7 @@ abstract contract NFTFactory is Ownable {
     event NewOrisNft(uint id, string name);
 
     modifier onlyOrisNftOfCreator(uint _tokenId) {
-        require(orisNftToOwner[_tokenId] == owner());
+        require(orisNftToOwner[_tokenId] == owner(), "This token is not belong to creator!");
         _;
     }
 

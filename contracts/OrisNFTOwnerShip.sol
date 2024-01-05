@@ -63,45 +63,7 @@ contract OrisNFTOwnerShip is NFTFactory, ERC721 {
         emit Approval(msg.sender, _approved, _tokenId);
     }
 
-    struct MIntTask {
-        bool hasInitialled;
-        bool hasFollowed;
-        bool hasSharedFbPost;
-    }
-
-    mapping(address => mapping(uint => MIntTask)) mintUsers;
-
-    function mintNftStatus(
-        uint _tokenId
-    ) public view returns (MIntTask memory) {
-        MIntTask memory task = mintUsers[msg.sender][_tokenId];
-        require(task.hasInitialled);
-        return task;
-    }
-
-    function beginMint(uint _tokenId) public notOfSender(_tokenId) {
-        MIntTask memory task = MIntTask(false, false, false);
-        require(!task.hasInitialled);
-        task.hasInitialled = true;
-        mintUsers[msg.sender][_tokenId] = task;
-    }
-
-    function hasFollowedFb(uint _tokenId) public notOfSender(_tokenId) {
-        MIntTask storage task = mintUsers[msg.sender][_tokenId];
-        require(task.hasInitialled);
-        task.hasFollowed = true;
-    }
-
-    function hasSharedFbPost(uint _tokenId) public notOfSender(_tokenId) {
-        MIntTask storage task = mintUsers[msg.sender][_tokenId];
-        require(task.hasInitialled);
-        task.hasSharedFbPost = true;
-    }
-
-    function claimOrisNft(uint _tokenId) public notOfSender(_tokenId) {
-        require(msg.sender != orisNftToOwner[_tokenId]);
-        MIntTask storage task = mintUsers[msg.sender][_tokenId];
-        require(task.hasInitialled && task.hasFollowed && task.hasSharedFbPost, "You must follow fb and share a post!");
+    function claimOrisNft(uint _tokenId) external payable notOfSender(_tokenId) onlyOrisNftOfCreator(_tokenId)  {
         _transfer(owner(), msg.sender, _tokenId);
     }
 }
